@@ -148,11 +148,11 @@ void dct32(mad_fixed_t const in[32], unsigned int slot,
   mad_fixed_t t168, t169, t170, t171, t172, t173, t174, t175;
   mad_fixed_t t176;
 
-  int i, j;
+  int i;
 
   printf("var _in = [");
   for (i = 0; i < 32; i++) {
-    printf("%e,", mad_f_todouble(in[i]));
+    printf("%d,", in[i]);
   }
   printf("];\n");
 
@@ -521,13 +521,13 @@ void dct32(mad_fixed_t const in[32], unsigned int slot,
 
   printf("var lo = [");
   for (i = 0; i < 16; i++) {
-    printf("%e,", mad_f_todouble(lo[i][slot]));
+    printf("%d,", lo[i][slot]);
   }
   printf("];\n");
 
   printf("var hi = [");
   for (i = 0; i < 16; i++) {
-    printf("%e,", mad_f_todouble(hi[i][slot]));
+    printf("%d,", hi[i][slot]);
   }
   printf("];\n");
 
