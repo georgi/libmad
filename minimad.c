@@ -82,7 +82,7 @@ struct buffer {
 
 static
 enum mad_flow input(void *data,
-		    struct mad_stream *stream)
+                    struct mad_stream *stream)
 {
   struct buffer *buffer = data;
 
@@ -130,8 +130,8 @@ static int STEPS_COUNT = 0;
 
 static
 enum mad_flow output(void *data,
-		     struct mad_header const *header,
-		     struct mad_pcm *pcm)
+                     struct mad_header const *header,
+                     struct mad_pcm *pcm)
 {
   // DEBUG
   //if(STEPS_COUNT++ >= 4) exit(1);
@@ -154,14 +154,14 @@ enum mad_flow output(void *data,
     /* output sample(s) in 16-bit signed little-endian PCM */
 
     sample = scale(*left_ch++);
-    putchar((sample >> 0) & 0xff);
-    putchar((sample >> 8) & 0xff);
+    /* putchar((sample >> 0) & 0xff); */
+    /* putchar((sample >> 8) & 0xff); */
 
-    if (nchannels == 2) {
-      sample = scale(*right_ch++);
-      putchar((sample >> 0) & 0xff);
-      putchar((sample >> 8) & 0xff);
-    }
+    /* if (nchannels == 2) { */
+    /*   sample = scale(*right_ch++); */
+    /*   putchar((sample >> 0) & 0xff); */
+    /*   putchar((sample >> 8) & 0xff); */
+    /* } */
   }
 
   return MAD_FLOW_CONTINUE;
@@ -176,14 +176,14 @@ enum mad_flow output(void *data,
 
 static
 enum mad_flow error(void *data,
-		    struct mad_stream *stream,
-		    struct mad_frame *frame)
+                    struct mad_stream *stream,
+                    struct mad_frame *frame)
 {
   struct buffer *buffer = data;
 
   fprintf(stderr, "decoding error 0x%04x (%s) at byte offset %u\n",
-	  stream->error, mad_stream_errorstr(stream),
-	  stream->this_frame - buffer->start);
+          stream->error, mad_stream_errorstr(stream),
+          stream->this_frame - buffer->start);
 
   /* return MAD_FLOW_BREAK here to stop decoding (and propagate an error) */
 
@@ -214,8 +214,8 @@ int decode(unsigned char const *start, unsigned long length)
   /* configure input, output, and error functions */
 
   mad_decoder_init(&decoder, &buffer,
-		   input, 0 /* header */, 0 /* filter */, output,
-		   error, 0 /* message */);
+                   input, 0 /* header */, 0 /* filter */, output,
+                   error, 0 /* message */);
 
   /* start decoding */
 

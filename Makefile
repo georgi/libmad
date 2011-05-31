@@ -12,7 +12,7 @@
 # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
-
+MAKE=make
 
 
 SOURCES = $(libmad_la_SOURCES) $(EXTRA_libmad_la_SOURCES) $(minimad_SOURCES)
@@ -111,27 +111,27 @@ DIST_ARCHIVES = $(distdir).tar.gz
 GZIP_ENV = --best
 distuninstallcheck_listfiles = find . -type f -print
 distcleancheck_listfiles = find . -type f -print
-ACLOCAL = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run aclocal-1.8
+ACLOCAL = ${SHELL} /home/matti/libmad/missing --run aclocal-1.8
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run tar
+AMTAR = ${SHELL} /home/matti/libmad/missing --run tar
 AR = ar
 ASO =  -DASO_ZEROCHECK
 ASO_OBJS = 
-AUTOCONF = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run automake-1.8
+AUTOCONF = ${SHELL} /home/matti/libmad/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/matti/libmad/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/matti/libmad/missing --run automake-1.8
 AWK = mawk
 CC = gcc
 CCAS = gcc
 CCASFLAGS = -g -O2
-CCDEPMODE = depmode=gcc3
+CCDEPMODE = depmode=none
 CFLAGS = -Wall -march=i486 -g -O -fforce-addr -fthread-jumps -fcse-follow-jumps -fcse-skip-blocks -fexpensive-optimizations -fregmove -fschedule-insns2 -fstrength-reduce
 CPP = gcc -E
 CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=gcc3
+CXXDEPMODE = depmode=none
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
@@ -156,7 +156,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/matti/libmad/missing --run makeinfo
 OBJEXT = o
 PACKAGE = libmad
 PACKAGE_BUGREPORT = support@underbit.com
@@ -166,7 +166,7 @@ PACKAGE_TARNAME = libmad
 PACKAGE_VERSION = 0.15.1b
 PATH_SEPARATOR = :
 RANLIB = ranlib
-SET_MAKE = 
+SET_MAKE = MAKE=make
 SHELL = /bin/bash
 STRIP = strip
 VERSION = 0.15.1b
@@ -176,11 +176,11 @@ ac_ct_CXX = g++
 ac_ct_F77 = 
 ac_ct_RANLIB = ranlib
 ac_ct_STRIP = strip
-am__fastdepCC_FALSE = #
-am__fastdepCC_TRUE = 
-am__fastdepCXX_FALSE = #
-am__fastdepCXX_TRUE = 
-am__include = include
+am__fastdepCC_FALSE = 
+am__fastdepCC_TRUE = #
+am__fastdepCXX_FALSE = 
+am__fastdepCXX_TRUE = #
+am__include = #
 am__leading_dot = .
 am__quote = 
 bindir = ${exec_prefix}/bin
@@ -198,14 +198,14 @@ host_os = linux-gnu
 host_vendor = pc
 includedir = ${prefix}/include
 infodir = ${prefix}/info
-install_sh = /home/ndd/Dev/libmad-0.15.1b/install-sh
+install_sh = /home/matti/libmad/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
 mandir = ${prefix}/man
 mkdir_p = mkdir -p -- .
 oldincludedir = /usr/include
-prefix = /home/ndd/Dev/
+prefix = /usr/local
 program_transform_name = s,x,x,
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
@@ -341,18 +341,18 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-include ./$(DEPDIR)/bit.Plo
-include ./$(DEPDIR)/decoder.Plo
-include ./$(DEPDIR)/fixed.Plo
-include ./$(DEPDIR)/frame.Plo
-include ./$(DEPDIR)/huffman.Plo
-include ./$(DEPDIR)/layer12.Plo
-include ./$(DEPDIR)/layer3.Plo
-include ./$(DEPDIR)/minimad.Po
-include ./$(DEPDIR)/stream.Plo
-include ./$(DEPDIR)/synth.Plo
-include ./$(DEPDIR)/timer.Plo
-include ./$(DEPDIR)/version.Plo
+# ./$(DEPDIR)/bit.Plo
+# ./$(DEPDIR)/decoder.Plo
+# ./$(DEPDIR)/fixed.Plo
+# ./$(DEPDIR)/frame.Plo
+# ./$(DEPDIR)/huffman.Plo
+# ./$(DEPDIR)/layer12.Plo
+# ./$(DEPDIR)/layer3.Plo
+# ./$(DEPDIR)/minimad.Po
+# ./$(DEPDIR)/stream.Plo
+# ./$(DEPDIR)/synth.Plo
+# ./$(DEPDIR)/timer.Plo
+# ./$(DEPDIR)/version.Plo
 
 .S.o:
 	$(CCASCOMPILE) -c $<
@@ -364,28 +364,28 @@ include ./$(DEPDIR)/version.Plo
 	$(LTCCASCOMPILE) -c -o $@ $<
 
 .c.o:
-	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
-	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
-#	source='$<' object='$@' libtool=no \
-#	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' \
-#	$(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c $<
+#	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+#	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+	source='$<' object='$@' libtool=no \
+	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' \
+	$(CCDEPMODE) $(depcomp) \
+	$(COMPILE) -c $<
 
 .c.obj:
-	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ `$(CYGPATH_W) '$<'`; \
-	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
-#	source='$<' object='$@' libtool=no \
-#	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' \
-#	$(CCDEPMODE) $(depcomp) \
-#	$(COMPILE) -c `$(CYGPATH_W) '$<'`
+#	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ `$(CYGPATH_W) '$<'`; \
+#	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+	source='$<' object='$@' libtool=no \
+	depfile='$(DEPDIR)/$*.Po' tmpdepfile='$(DEPDIR)/$*.TPo' \
+	$(CCDEPMODE) $(depcomp) \
+	$(COMPILE) -c `$(CYGPATH_W) '$<'`
 
 .c.lo:
-	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
-	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
-#	source='$<' object='$@' libtool=yes \
-#	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' \
-#	$(CCDEPMODE) $(depcomp) \
-#	$(LTCOMPILE) -c -o $@ $<
+#	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+#	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+	source='$<' object='$@' libtool=yes \
+	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' \
+	$(CCDEPMODE) $(depcomp) \
+	$(LTCOMPILE) -c -o $@ $<
 
 mostlyclean-libtool:
 	-rm -f *.lo

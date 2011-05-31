@@ -12,7 +12,7 @@
 # even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 # PARTICULAR PURPOSE.
 
-
+MAKE=make
 srcdir = .
 top_srcdir = ..
 
@@ -46,27 +46,27 @@ CONFIG_CLEAN_FILES =
 SOURCES =
 DIST_SOURCES =
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run aclocal-1.8
+ACLOCAL = ${SHELL} /home/matti/libmad/missing --run aclocal-1.8
 AMDEP_FALSE = #
 AMDEP_TRUE = 
-AMTAR = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run tar
+AMTAR = ${SHELL} /home/matti/libmad/missing --run tar
 AR = ar
 ASO =  -DASO_ZEROCHECK
 ASO_OBJS = 
-AUTOCONF = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run automake-1.8
+AUTOCONF = ${SHELL} /home/matti/libmad/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/matti/libmad/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/matti/libmad/missing --run automake-1.8
 AWK = mawk
 CC = gcc
 CCAS = gcc
 CCASFLAGS = -g -O2
-CCDEPMODE = depmode=gcc3
-CFLAGS = -Wall -march=i486 -g -O -fforce-mem -fforce-addr -fthread-jumps -fcse-follow-jumps -fcse-skip-blocks -fexpensive-optimizations -fregmove -fschedule-insns2 -fstrength-reduce
+CCDEPMODE = depmode=none
+CFLAGS = -Wall -march=i486 -g -O -fforce-addr -fthread-jumps -fcse-follow-jumps -fcse-skip-blocks -fexpensive-optimizations -fregmove -fschedule-insns2 -fstrength-reduce
 CPP = gcc -E
 CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
-CXXDEPMODE = depmode=gcc3
+CXXDEPMODE = depmode=none
 CXXFLAGS = -g -O2
 CYGPATH_W = echo
 DEFS = -DHAVE_CONFIG_H
@@ -91,7 +91,7 @@ LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIBTOOL_DEPS = ./ltmain.sh
 LN_S = ln -s
 LTLIBOBJS = 
-MAKEINFO = ${SHELL} /home/ndd/Dev/libmad-0.15.1b/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/matti/libmad/missing --run makeinfo
 OBJEXT = o
 PACKAGE = libmad
 PACKAGE_BUGREPORT = support@underbit.com
@@ -101,7 +101,7 @@ PACKAGE_TARNAME = libmad
 PACKAGE_VERSION = 0.15.1b
 PATH_SEPARATOR = :
 RANLIB = ranlib
-SET_MAKE = 
+SET_MAKE = MAKE=make
 SHELL = /bin/bash
 STRIP = strip
 VERSION = 0.15.1b
@@ -111,11 +111,11 @@ ac_ct_CXX = g++
 ac_ct_F77 = 
 ac_ct_RANLIB = ranlib
 ac_ct_STRIP = strip
-am__fastdepCC_FALSE = #
-am__fastdepCC_TRUE = 
-am__fastdepCXX_FALSE = #
-am__fastdepCXX_TRUE = 
-am__include = include
+am__fastdepCC_FALSE = 
+am__fastdepCC_TRUE = #
+am__fastdepCXX_FALSE = 
+am__fastdepCXX_TRUE = #
+am__include = #
 am__leading_dot = .
 am__quote = 
 bindir = ${exec_prefix}/bin
@@ -133,14 +133,14 @@ host_os = linux-gnu
 host_vendor = pc
 includedir = ${prefix}/include
 infodir = ${prefix}/info
-install_sh = /home/ndd/Dev/libmad-0.15.1b/install-sh
+install_sh = /home/matti/libmad/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localstatedir = ${prefix}/var
 mandir = ${prefix}/man
 mkdir_p = mkdir -p -- .
 oldincludedir = /usr/include
-prefix = /home/ndd/Dev/
+prefix = /usr/local
 program_transform_name = s,x,x,
 sbindir = ${exec_prefix}/sbin
 sharedstatedir = ${prefix}/com
