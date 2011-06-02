@@ -167,7 +167,7 @@ PACKAGE_VERSION = 0.15.1b
 PATH_SEPARATOR = :
 RANLIB = ranlib
 SET_MAKE = MAKE=make
-SHELL = /bin/bash
+SHELL = /bin/sh
 STRIP = strip
 VERSION = 0.15.1b
 ac_ct_AR = ar

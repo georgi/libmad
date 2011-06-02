@@ -148,13 +148,13 @@ void dct32(mad_fixed_t const in[32], unsigned int slot,
   mad_fixed_t t168, t169, t170, t171, t172, t173, t174, t175;
   mad_fixed_t t176;
 
-  int i;
+  /* int i; */
 
-  printf("var _in = [");
-  for (i = 0; i < 32; i++) {
-    printf("%d,", in[i]);
-  }
-  printf("];\n");
+  /* printf("var _in = ["); */
+  /* for (i = 0; i < 32; i++) { */
+  /*   printf("%d,", in[i]); */
+  /* } */
+  /* printf("];\n"); */
 
   /* costab[i] = cos(PI / (2 * 32) * i) */
 
@@ -519,17 +519,17 @@ void dct32(mad_fixed_t const in[32], unsigned int slot,
    *  49 shifts (not counting SSO)
    */
 
-  printf("var lo = [");
-  for (i = 0; i < 16; i++) {
-    printf("%d,", lo[i][slot]);
-  }
-  printf("];\n");
+  /* printf("var lo = ["); */
+  /* for (i = 0; i < 16; i++) { */
+  /*   printf("%d,", lo[i][slot]); */
+  /* } */
+  /* printf("];\n"); */
 
-  printf("var hi = [");
-  for (i = 0; i < 16; i++) {
-    printf("%d,", hi[i][slot]);
-  }
-  printf("];\n");
+  /* printf("var hi = ["); */
+  /* for (i = 0; i < 16; i++) { */
+  /*   printf("%d,", hi[i][slot]); */
+  /* } */
+  /* printf("];\n"); */
 
 }
 
@@ -587,6 +587,20 @@ void synth_full(struct mad_synth *synth, struct mad_frame const *frame,
   register mad_fixed_t const (*Dptr)[32], *ptr;
   register mad_fixed64hi_t hi;
   register mad_fixed64lo_t lo;
+
+  /* int i, j; */
+  /* printf("sbsamples.push([\n"); */
+  /* for (i = 0; i < ns; ++i) { */
+  /*   printf("[\n"); */
+  /*   for (j = 0; j < 32; ++j) { */
+  /*     printf("%.8f", mad_f_todouble(frame->sbsample[0][i][j])); */
+  /*     if (j < 31) { */
+  /*       printf(","); */
+  /*     } */
+  /*   } */
+  /*   printf("],\n"); */
+  /* } */
+  /* printf("]);\n"); */
 
   for (ch = 0; ch < nch; ++ch) {
     sbsample = &frame->sbsample[ch];
@@ -706,6 +720,19 @@ void synth_full(struct mad_synth *synth, struct mad_frame const *frame,
       phase = (phase + 1) % 16;
     }
   }
+
+  /* printf("pcm.push([\n"); */
+  /* for (i = 0; i < 1152; i++) { */
+  /*   printf("%.8f", mad_f_todouble(synth->pcm.samples[0][i])); */
+  /*   if (j < 1151) { */
+  /*     printf(","); */
+  /*   } */
+  /*   if (i % 8 == 0) { */
+  /*     printf("\n"); */
+  /*   } */
+  /* } */
+  /* printf("]);\n\n"); */
+
 }
 # endif
 
