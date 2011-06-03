@@ -1,0 +1,20 @@
+~/jsmad/experiments/node/
+0:[+] dct.js
+0:[+] fastdsct.js
+0:[+] full_frame.js
+0:[+] huffdecode.js
+0:[?] huffman1.txt
+0:[?] huffman2.txt
+0:[+] imdct.js
+0:[?] one_second_beep.mp3
+0:[?] one_second_of_silence.mp3
+0:[?] out.raw
+0:[?] out.raw.gpk
+0:[+] output.js
+0:[?] output.mp3
+0:[?] output1.txt
+0:[?] output2.txt
+0:[+] reorder.js
+0:[+] scalefac.js
+0:[+] test.js
+0:[+] typed-array.js

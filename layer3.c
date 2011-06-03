@@ -141,40 +141,40 @@ unsigned char const nsfb_table[6][3][4] = {
  */
 static
 unsigned char const sfb_48000_long[] = {
-   4,  4,  4,  4,  4,  4,  6,  6,  6,   8,  10,
+  4,  4,  4,  4,  4,  4,  6,  6,  6,   8,  10,
   12, 16, 18, 22, 28, 34, 40, 46, 54,  54, 192
 };
 
 static
 unsigned char const sfb_44100_long[] = {
-   4,  4,  4,  4,  4,  4,  6,  6,  8,   8,  10,
+  4,  4,  4,  4,  4,  4,  6,  6,  8,   8,  10,
   12, 16, 20, 24, 28, 34, 42, 50, 54,  76, 158
 };
 
 static
 unsigned char const sfb_32000_long[] = {
-   4,  4,  4,  4,  4,  4,  6,  6,  8,  10,  12,
+  4,  4,  4,  4,  4,  4,  6,  6,  8,  10,  12,
   16, 20, 24, 30, 38, 46, 56, 68, 84, 102,  26
 };
 
 static
 unsigned char const sfb_48000_short[] = {
-   4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,
-   6,  6,  6,  6,  6, 10, 10, 10, 12, 12, 12, 14, 14,
+  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,
+  6,  6,  6,  6,  6, 10, 10, 10, 12, 12, 12, 14, 14,
   14, 16, 16, 16, 20, 20, 20, 26, 26, 26, 66, 66, 66
 };
 
 static
 unsigned char const sfb_44100_short[] = {
-   4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,
-   6,  6,  8,  8,  8, 10, 10, 10, 12, 12, 12, 14, 14,
+  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,
+  6,  6,  8,  8,  8, 10, 10, 10, 12, 12, 12, 14, 14,
   14, 18, 18, 18, 22, 22, 22, 30, 30, 30, 56, 56, 56
 };
 
 static
 unsigned char const sfb_32000_short[] = {
-   4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,
-   6,  6,  8,  8,  8, 12, 12, 12, 16, 16, 16, 20, 20,
+  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,
+  6,  6,  8,  8,  8, 12, 12, 12, 16, 16, 16, 20, 20,
   20, 26, 26, 26, 34, 34, 34, 42, 42, 42, 12, 12, 12
 };
 
@@ -182,24 +182,24 @@ static
 unsigned char const sfb_48000_mixed[] = {
   /* long */   4,  4,  4,  4,  4,  4,  6,  6,
   /* short */  4,  4,  4,  6,  6,  6,  6,  6,  6, 10,
-              10, 10, 12, 12, 12, 14, 14, 14, 16, 16,
-              16, 20, 20, 20, 26, 26, 26, 66, 66, 66
+  10, 10, 12, 12, 12, 14, 14, 14, 16, 16,
+  16, 20, 20, 20, 26, 26, 26, 66, 66, 66
 };
 
 static
 unsigned char const sfb_44100_mixed[] = {
   /* long */   4,  4,  4,  4,  4,  4,  6,  6,
   /* short */  4,  4,  4,  6,  6,  6,  8,  8,  8, 10,
-              10, 10, 12, 12, 12, 14, 14, 14, 18, 18,
-              18, 22, 22, 22, 30, 30, 30, 56, 56, 56
+  10, 10, 12, 12, 12, 14, 14, 14, 18, 18,
+  18, 22, 22, 22, 30, 30, 30, 56, 56, 56
 };
 
 static
 unsigned char const sfb_32000_mixed[] = {
   /* long */   4,  4,  4,  4,  4,  4,  6,  6,
   /* short */  4,  4,  4,  6,  6,  6,  8,  8,  8, 12,
-              12, 12, 16, 16, 16, 20, 20, 20, 26, 26,
-              26, 34, 34, 34, 42, 42, 42, 12, 12, 12
+  12, 12, 16, 16, 16, 20, 20, 20, 26, 26,
+  26, 34, 34, 34, 42, 42, 42, 12, 12, 12
 };
 
 /*
@@ -208,13 +208,13 @@ unsigned char const sfb_32000_mixed[] = {
  */
 static
 unsigned char const sfb_24000_long[] = {
-   6,  6,  6,  6,  6,  6,  8, 10, 12,  14,  16,
+  6,  6,  6,  6,  6,  6,  8, 10, 12,  14,  16,
   18, 22, 26, 32, 38, 46, 54, 62, 70,  76,  36
 };
 
 static
 unsigned char const sfb_22050_long[] = {
-   6,  6,  6,  6,  6,  6,  8, 10, 12,  14,  16,
+  6,  6,  6,  6,  6,  6,  8, 10, 12,  14,  16,
   20, 24, 28, 32, 38, 46, 52, 60, 68,  58,  54
 };
 
@@ -222,22 +222,22 @@ unsigned char const sfb_22050_long[] = {
 
 static
 unsigned char const sfb_24000_short[] = {
-   4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  8,
-   8,  8, 10, 10, 10, 12, 12, 12, 14, 14, 14, 18, 18,
+  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  8,
+  8,  8, 10, 10, 10, 12, 12, 12, 14, 14, 14, 18, 18,
   18, 24, 24, 24, 32, 32, 32, 44, 44, 44, 12, 12, 12
 };
 
 static
 unsigned char const sfb_22050_short[] = {
-   4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  6,
-   6,  6,  8,  8,  8, 10, 10, 10, 14, 14, 14, 18, 18,
+  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  6,
+  6,  6,  8,  8,  8, 10, 10, 10, 14, 14, 14, 18, 18,
   18, 26, 26, 26, 32, 32, 32, 42, 42, 42, 18, 18, 18
 };
 
 static
 unsigned char const sfb_16000_short[] = {
-   4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  8,
-   8,  8, 10, 10, 10, 12, 12, 12, 14, 14, 14, 18, 18,
+  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  8,
+  8,  8, 10, 10, 10, 12, 12, 12, 14, 14, 14, 18, 18,
   18, 24, 24, 24, 30, 30, 30, 40, 40, 40, 18, 18, 18
 };
 
@@ -245,24 +245,24 @@ static
 unsigned char const sfb_24000_mixed[] = {
   /* long */   6,  6,  6,  6,  6,  6,
   /* short */  6,  6,  6,  8,  8,  8, 10, 10, 10, 12,
-              12, 12, 14, 14, 14, 18, 18, 18, 24, 24,
-              24, 32, 32, 32, 44, 44, 44, 12, 12, 12
+  12, 12, 14, 14, 14, 18, 18, 18, 24, 24,
+  24, 32, 32, 32, 44, 44, 44, 12, 12, 12
 };
 
 static
 unsigned char const sfb_22050_mixed[] = {
   /* long */   6,  6,  6,  6,  6,  6,
   /* short */  6,  6,  6,  6,  6,  6,  8,  8,  8, 10,
-              10, 10, 14, 14, 14, 18, 18, 18, 26, 26,
-              26, 32, 32, 32, 42, 42, 42, 18, 18, 18
+  10, 10, 14, 14, 14, 18, 18, 18, 26, 26,
+  26, 32, 32, 32, 42, 42, 42, 18, 18, 18
 };
 
 static
 unsigned char const sfb_16000_mixed[] = {
   /* long */   6,  6,  6,  6,  6,  6,
   /* short */  6,  6,  6,  8,  8,  8, 10, 10, 10, 12,
-              12, 12, 14, 14, 14, 18, 18, 18, 24, 24,
-              24, 30, 30, 30, 40, 40, 40, 18, 18, 18
+  12, 12, 14, 14, 14, 18, 18, 18, 24, 24,
+  24, 30, 30, 30, 40, 40, 40, 18, 18, 18
 };
 
 /*
@@ -283,7 +283,7 @@ unsigned char const sfb_8000_long[] = {
 
 static
 unsigned char const sfb_8000_short[] = {
-   8,  8,  8,  8,  8,  8,  8,  8,  8, 12, 12, 12, 16,
+  8,  8,  8,  8,  8,  8,  8,  8,  8, 12, 12, 12, 16,
   16, 16, 20, 20, 20, 24, 24, 24, 28, 28, 28, 36, 36,
   36,  2,  2,  2,  2,  2,  2,  2,  2,  2, 26, 26, 26
 };
@@ -297,8 +297,8 @@ static
 unsigned char const sfb_8000_mixed[] = {
   /* long */  12, 12, 12,
   /* short */  4,  4,  4,  8,  8,  8, 12, 12, 12, 16, 16, 16,
-              20, 20, 20, 24, 24, 24, 28, 28, 28, 36, 36, 36,
-               2,  2,  2,  2,  2,  2,  2,  2,  2, 26, 26, 26
+  20, 20, 20, 24, 24, 24, 28, 28, 28, 36, 36, 36,
+  2,  2,  2,  2,  2,  2,  2,  2,  2, 26, 26, 26
 };
 
 static
@@ -725,23 +725,23 @@ unsigned int III_scalefactors(struct mad_bitptr *ptr, struct channel *channel,
   slen1 = sflen_table[channel->scalefac_compress].slen1;
   slen2 = sflen_table[channel->scalefac_compress].slen2;
 
-  printf("tests.push({\n");
-  printf("block_type: %d,\n", channel->block_type);
-  printf("scalefac_compress: %d,\n", channel->scalefac_compress);
-  printf("flags: %d,\n", channel->flags);  
-  printf("scfsi: %d,\n", scfsi);  
+  /* printf("tests.push({\n"); */
+  /* printf("block_type: %d,\n", channel->block_type); */
+  /* printf("scalefac_compress: %d,\n", channel->scalefac_compress); */
+  /* printf("flags: %d,\n", channel->flags);   */
+  /* printf("scfsi: %d,\n", scfsi);   */
 
-  int i;
-  struct mad_bitptr p = *ptr;
+  /* int i; */
+  /* struct mad_bitptr p = *ptr; */
 
-  printf("byte: [");
+  /* printf("byte: ["); */
 
-  for (i = 0; i < 20; i++) {
-    printf("%d", (unsigned int) mad_bit_read(&p, 8));
-    if (i < 19) printf(",");
-  }
+  /* for (i = 0; i < 20; i++) { */
+  /*   printf("%d", (unsigned int) mad_bit_read(&p, 8)); */
+  /*   if (i < 19) printf(","); */
+  /* } */
 
-  printf("],\n");
+  /* printf("],\n"); */
 
   if (channel->block_type == 2) {
     unsigned int nsfb;
@@ -801,23 +801,23 @@ unsigned int III_scalefactors(struct mad_bitptr *ptr, struct channel *channel,
     sfbi = 22;
   }
 
-  printf("gr0_scalefac: [");
+  /* printf("gr0_scalefac: ["); */
 
-  for (i = 0; i < sfbi; i++) {
-    printf("%d", gr0ch->scalefac[i]);
-    if (i < sfbi - 1) printf(",");
-  }
+  /* for (i = 0; i < sfbi; i++) { */
+  /*   printf("%d", gr0ch->scalefac[i]); */
+  /*   if (i < sfbi - 1) printf(","); */
+  /* } */
 
-  printf("],\n");
+  /* printf("],\n"); */
 
-  printf("scalefac: [");
+  /* printf("scalefac: ["); */
 
-  for (i = 0; i < sfbi; i++) {
-    printf("%d", channel->scalefac[i]);
-    if (i < sfbi - 1) printf(",");
-  }
+  /* for (i = 0; i < sfbi; i++) { */
+  /*   printf("%d", channel->scalefac[i]); */
+  /*   if (i < sfbi - 1) printf(","); */
+  /* } */
 
-  printf("]});\n\n");
+  /* printf("]});\n\n"); */
 
 
   return mad_bit_length(&start, ptr);
@@ -960,10 +960,10 @@ mad_fixed_t III_requantize(unsigned int value, signed int exp)
 }
 
 /* we must take care that sz >= bits and sz < sizeof(long) lest bits == 0 */
-# define MASK(cache, sz, bits)  \
-    (((cache) >> ((sz) - (bits))) & ((1 << (bits)) - 1))
-# define MASK1BIT(cache, sz)  \
-    ((cache) & (1 << ((sz) - 1)))
+# define MASK(cache, sz, bits)                          \
+  (((cache) >> ((sz) - (bits))) & ((1 << (bits)) - 1))
+# define MASK1BIT(cache, sz)                    \
+  ((cache) & (1 << ((sz) - 1)))
 
 /*
  * NAME:        III_huffdecode()
@@ -1061,17 +1061,17 @@ enum mad_error III_huffdecode(struct mad_bitptr *ptr, mad_fixed_t xr[576],
         ++expptr;
       }
 
-        //fprintf(stderr, "cachesz = %d\n", cachesz);
+      //fprintf(stderr, "cachesz = %d\n", cachesz);
 
       if (cachesz < 21) {
         unsigned int bits;
 
         bits       = ((32 - 1 - 21) + (21 - cachesz)) & ~7;
-    unsigned long tls = (bitcache << bits);
-    unsigned long mbr = mad_bit_read(&peek, bits);
-    bitcache   = tls | mbr;
-    cachesz   += bits;
-    bits_left -= bits;
+        unsigned long tls = (bitcache << bits);
+        unsigned long mbr = mad_bit_read(&peek, bits);
+        bitcache   = tls | mbr;
+        cachesz   += bits;
+        bits_left -= bits;
       }
 
       /* hcod (0..19) */
@@ -1336,6 +1336,24 @@ void III_reorder(mad_fixed_t xr[576], struct channel const *channel,
   mad_fixed_t tmp[32][3][6];
   unsigned int sb, l, f, w, sbw[3], sw[3];
 
+  int i;
+
+  printf("tests.push({\n");
+  printf("flags: %d,\n", channel->flags);
+  printf("sfbwidth: [\n");
+  for (i = 0; i < 39; i++) {
+    printf("%d", sfbwidth[i]);
+    if (i < 38) printf(",");
+  }
+  printf("],\n");
+
+  printf("xr0: [\n");
+  for (i = 0; i < 576; i++) {
+    printf("%.8f", mad_f_todouble(xr[i]));
+    if (i < 575) printf(",");
+  }
+  printf("],\n");
+
   /* this is probably wrong for 8000 Hz mixed blocks */
 
   sb = 0;
@@ -1370,6 +1388,13 @@ void III_reorder(mad_fixed_t xr[576], struct channel const *channel,
   }
 
   memcpy(&xr[18 * sb], &tmp[sb], (576 - 18 * sb) * sizeof(mad_fixed_t));
+
+  printf("xr1: [\n");
+  for (i = 0; i < 576; i++) {
+    printf("%.8f", mad_f_todouble(xr[i]));
+    if (i < 575) printf(",");
+  }
+  printf("]});\n\n");
 }
 
 /*
