@@ -2422,9 +2422,6 @@ void III_overlap(mad_fixed_t const output[36], mad_fixed_t overlap[18],
   }
 # else
   for (i = 0; i < 18; ++i) {
-    /* printf("%.8f\t", mad_f_todouble(overlap[i])); */
-    /* if (i % 4 == 3) printf("\n"); */
-
     sample[i][sb] = output[i +  0] + overlap[i];
     overlap[i]    = output[i + 18];
   }
@@ -2577,12 +2574,6 @@ enum mad_error III_decode(struct mad_bitptr *ptr, struct mad_frame *frame,
         return error;
     }
 
-    /* int i; */
-    /* for (i = 0; i < 576; i++) { */
-    /*   printf("%.8f\t", mad_f_todouble(xr[0][i])); */
-    /*   if (i % 8 == 7) printf("\n"); */
-    /* } */
-
     /* joint stereo processing */
 
     if (header->mode == MAD_MODE_JOINT_STEREO && header->mode_extension) {
@@ -2614,10 +2605,32 @@ enum mad_error III_decode(struct mad_bitptr *ptr, struct mad_frame *frame,
           III_aliasreduce(xr[ch], 36);
 # endif
       }
-      else
+      else {
+        /* printf("var xr = [\n"); */
+        /* for (i = 0; i < 576; i++) { */
+        /*   printf("%.8f", mad_f_todouble(xr[0][i])); */
+        /*   if (i < 575) printf(","); */
+        /*   if (i % 8 == 7) printf("\n"); */
+        /* } */
+        /* printf("];\n"); */
+
         III_aliasreduce(xr[ch], 576);
 
+        /* printf("var xr2 = [\n"); */
+        /* for (i = 0; i < 576; i++) { */
+        /*   printf("%.8f", mad_f_todouble(xr[0][i])); */
+        /*   if (i < 575) printf(","); */
+        /*   if (i % 8 == 7) printf("\n"); */
+        /* } */
+        /* printf("];\n\n\n;"); */
+      }
+
       l = 0; 
+
+      /* for (i = 0; i < 576; i++) { */
+      /*   printf("%.8f\t", mad_f_todouble(xr[0][i])); */
+      /*   if (i % 8 == 7) printf("\n"); */
+      /* } */
 
       /* subbands 0-1 */
 
@@ -2632,6 +2645,12 @@ enum mad_error III_decode(struct mad_bitptr *ptr, struct mad_frame *frame,
         for (sb = 0; sb < 2; ++sb, l += 18) {
           III_imdct_l(&xr[ch][l], output, block_type);
           III_overlap(output, (*frame->overlap)[ch][sb], sample, sb);
+
+          /* printf("\nblocktype: %d sb: %d\n", block_type, sb); */
+          /* for (i = 0; i < 18; i++) { */
+          /*   printf("%.8f\t", mad_f_todouble(output[i])); */
+          /*   if (i % 8 == 7) printf("\n"); */
+          /* } */
         }
       }
       else {
@@ -2642,26 +2661,7 @@ enum mad_error III_decode(struct mad_bitptr *ptr, struct mad_frame *frame,
         }
       }
 
-      /* for (i = 0; i < 576; i++) { */
-      /*   printf("%.8f\t", mad_f_todouble(xr[0][i])); */
-      /*   if (i % 8 == 7) printf("\n"); */
-      /* } */
-
-
       III_freqinver(sample, 1);
-
-      /* int j; */
-      /* for (i = 0; i < 18; i++) { */
-      /*   for (j = 0; j < 32; j++) { */
-      /*     printf("%.8f\t", mad_f_todouble(sample[i][j])); */
-      /*     if (j % 8 == 7) printf("\n"); */
-      /*   } */
-      /* } */
-
-      /* for (i = 0; i < 576; i++) { */
-      /*   printf("%.8f\t", mad_f_todouble(xr[0][i])); */
-      /*   if (i % 8 == 7) printf("\n"); */
-      /* } */
 
       /* (nonzero) subbands 2-31 */
 
@@ -2701,11 +2701,13 @@ enum mad_error III_decode(struct mad_bitptr *ptr, struct mad_frame *frame,
           III_freqinver(sample, sb);
       }
 
-      /* for (i = 0; i < 576; i++) { */
-      /*   printf("%.8f\t", mad_f_todouble(xr[0][i])); */
-      /*   if (i % 8 == 7) printf("\n"); */
+      /* int j; */
+      /* for (i = 0; i < 18; i++) { */
+      /*   for (j = 0; j < 2; j++) { */
+      /*     printf("%.8f\t", mad_f_todouble(sample[i][j])); */
+      /*   } */
+      /*   if (i % 4 == 3) printf("\n"); */
       /* } */
-
     }
   }
 
