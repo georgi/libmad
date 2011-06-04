@@ -224,6 +224,12 @@ void dct32(mad_fixed_t const in[32], unsigned int slot,
 #  define costab31      MAD_F(0x00c8fb30)  /* 0.049067674 */
 # endif
 
+  /* int i; */
+  /* for (i = 0; i < 32; i++) { */
+  /*   printf("%.8f\t", mad_f_todouble(in[i])); */
+  /*   if (i % 8 == 7) printf("\n"); */
+  /* } */
+
   t0   = in[0]  + in[31];  t16  = MUL(in[0]  - in[31], costab1);
   t1   = in[15] + in[16];  t17  = MUL(in[15] - in[16], costab31);
 
@@ -886,6 +892,8 @@ void mad_synth_frame(struct mad_synth *synth, struct mad_frame const *frame)
 
   nch = MAD_NCHANNELS(&frame->header);
   ns  = MAD_NSBSAMPLES(&frame->header);
+
+  /* printf("\n\n\nch: %d ns: %d\n", nch, ns); */
 
   synth->pcm.samplerate = frame->header.samplerate;
   synth->pcm.channels   = nch;

@@ -135,7 +135,7 @@ enum mad_flow output(void *data,
 {
   // DEBUG
   //if(STEPS_COUNT++ >= 4) exit(1);
-  return MAD_FLOW_CONTINUE;
+  /* return MAD_FLOW_CONTINUE; */
   // END DEBUG
     
   unsigned int nchannels, nsamples;
@@ -148,8 +148,13 @@ enum mad_flow output(void *data,
   left_ch   = pcm->samples[0];
   right_ch  = pcm->samples[1];
 
+  int i = 0;
+
   while (nsamples--) {
     signed int sample;
+
+    /* printf("%.8f\t", mad_f_todouble(*left_ch)); */
+    /* if (i++ % 8 == 7) printf("\n"); */
 
     /* output sample(s) in 16-bit signed little-endian PCM */
 
